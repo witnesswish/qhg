@@ -1,12 +1,7 @@
 const router = require('koa-router')()
+const testController = require('../controller/testController')
 
 router.prefix('/test')
 
-router.get('/', function (ctx, next) {
-    const ip = ctx.ip;
-  ctx.body = {
-    code: 200,
-    ip: ip
-  }
-})
+router.get('/', testController.index);
 module.exports = router
